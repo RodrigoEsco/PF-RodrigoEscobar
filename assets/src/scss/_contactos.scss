@@ -1,0 +1,130 @@
+
+form {
+    display: flex;
+    justify-content: center;
+    background-color:rgb(172, 125, 194);
+    padding-bottom: 50px;
+    padding-top: 50px;
+
+.contacto{
+    background-color: rgb(22, 21, 22);
+    color: white;
+    padding: 30px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 15px;
+    gap: 10px;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:  1fr 1fr 100px 60px;
+    grid-template-areas:
+                         "zona1    zona2 "
+                         "zona3    zona4"
+                         "zona5    zona5"
+                         "zona6    zona6";
+        @for $var from 1 to 6{
+            
+            label:nth-child(#{$var}){
+            grid-area: zona#{$var};
+            }
+            
+            
+        }
+
+        
+        .bton{
+            grid-area: zona6;        
+            @include boton(50px);
+
+            &:hover{
+                background-color: rgb(248, 217, 244);
+                box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+                }
+            }
+        }
+       
+        
+
+        label{
+            display: flex;
+            flex-direction: column;
+            
+            input{
+                background-color: transparent;
+                border: 0;
+                border-bottom: 1px solid white;
+            
+            }
+
+        }
+    }
+
+
+@media(max-width:806px){
+
+    form {
+        display: flex;
+        justify-content: center;
+        background-color:rgb(189, 190, 192);
+        padding-bottom: 50px;
+    
+    .contacto{
+        background-color: rgb(83, 82, 82);
+        color: white;
+        padding: 20px;
+        box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+        border-radius: 15px;
+        gap: 10px;
+        width: 90%;
+        display: grid;
+        grid-template-columns: 1fr ;
+        grid-template-rows:  1fr 1fr 1fr 1fr 100px 60px;
+        grid-template-areas:
+                             "nomApell"
+                             "email"
+                             "tel"
+                             "asunto"
+                             "mensaje"
+                             "button";
+    
+    
+            label:nth-child(1){
+                grid-area: nomApell;
+            }
+            label:nth-child(2){
+                grid-area: email;
+            }
+            label:nth-child(3){
+                grid-area: tel;
+            }
+            label:nth-child(4){
+                grid-area: asunto;
+            }
+            label:nth-child(5){
+                grid-area: mensaje;
+            }
+            input:nth-child(6){
+                grid-area: button;
+                height: 40px;
+    
+            }
+    
+            label{
+                display: flex;
+                flex-direction: column;
+                
+                input{
+                    background-color: transparent;
+                    border: 0;
+                    border-bottom: 1px solid white;
+                    margin-top: 10px;
+        
+                }
+    
+            }
+        }
+    }
+
+
+}
+

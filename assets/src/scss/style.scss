@@ -1,0 +1,18 @@
+
+@import "reset.scss";
+@import "navbar";
+@import "headerIndex";
+@import "footerGen";
+@import "estilos";
+@import "nosotros";
+@import "servicios";
+@import "mixin";
+@import "contactos";
+
+
+:root{
+    --facebook: #3b5999;
+    --instagram: #e4405f;
+    --twitter: #55acee;
+    --linkedin: #007785;
+}
